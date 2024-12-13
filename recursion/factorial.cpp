@@ -9,8 +9,7 @@ using namespace std ;
           else return 1;
     
         }
-     
-     
+  
 int main(){
      int n;
      cin>>n;
