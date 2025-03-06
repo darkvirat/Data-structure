@@ -2,8 +2,8 @@
 #include<vector>
 using namespace std ;
 
-void selectionsort(vector<int>&v){
-    int n=v.size();
+void selectionsort(int v[],int n){
+     
     for (int i = 0; i < n-1; i++)
     {
         int min=i;
@@ -19,19 +19,16 @@ void selectionsort(vector<int>&v){
 return ;
 
 }
-
-
-
 int main(){
     int n; 
     cin>>n;
-    vector<int>v(n);
+   int v[n];
     for (int i = 0; i<n; i++)
     {
         cin>>v[i];
     }
 
-    selectionsort(v);
+    selectionsort(v,n);
 
        for (int i = 0; i<n; i++)
     {

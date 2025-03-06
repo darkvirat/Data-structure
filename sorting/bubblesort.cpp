@@ -1,40 +1,32 @@
 #include<iostream>
-#include<vector>
 using namespace std ;
-
-void bubblesort(int arr[],int n){
-for (int i = 0; i < n-1; i++)
-{
-    for (int j = 0; j < n-i; j++)
+int bubblesort(int arr[],int N ){
+    for (int  i = 1; i <= N; i++)
     {
-        if(arr[j]>arr[j+1])
-        swap(arr[j],arr[j+1]);
+        for (int J = 1; J <= N-i; J++)
+        {
+           if(arr[J+1]<arr[J]) swap(arr[J+1],arr[J]);
+        }   
     }
     
 }
-
- 
-
-}
 int main(){
-    int n ;
+    int n;
     cin>>n;
-   int arr[n];
-    for (int i = 0; i < n; i++)
-    {
+    int arr[n];
+    for (int i = 1; i <= n; i++)
+    {                                                                                       
         cin>>arr[i];
+    
     }
-
+   
     bubblesort(arr,n);
 
-      for (int i = 0; i < n; i++)
+     for (int i = 1; i <= n; i++)
     {
-        cout<<arr[i];
+        cout<<arr[i]<<" ";
+    
     }
-
-
-
-
     
     return 0 ;
 }
