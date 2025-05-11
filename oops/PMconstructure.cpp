@@ -1,28 +1,31 @@
 #include<iostream>
 using namespace std ;
-class man{
-    public:
-    int age;
-    int marks;
-    
-man(int age,int marks){
-    this-> age=age;
-    this->marks=marks;
-    
-
-
-    }
-int print(){
-    cout<<age*marks;
+class Teacher{
+public:
+string name ;
+string dept;
+string subject;
+string salary;
+// parameterized constructor
+Teacher(string n,string d,string sub,string sal){
+    name = n;
+    dept=d;
+    subject=sub;
+    salary=sal;
 }
 
-
+void getinfo(){
+    cout<<name<<endl;
+    cout<<salary<<endl;
+    cout<<subject<<endl;
+    cout<<dept<<endl;
+}
 
 };
+
+
 int main(){
-    man b(5,5);
-    b.print();
-    
-    
+    Teacher t1("virat","MnC","CS","25000");
+    t1.getinfo();
     return 0 ;
 }

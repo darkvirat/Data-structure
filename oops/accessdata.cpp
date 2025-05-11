@@ -1,17 +1,27 @@
 #include<iostream>
 using namespace std ;
-class hero {
+class Teacher{
+    // acess modifier 
     public:
-    int age ;
+    // properties
     string name ;
+    string dept;
+    string salary;
+    // methods
+    void changedept(string newdept){
+        dept=newdept;
+    }
+    
 };
 int main(){
-    hero virat;
-
-    virat.age=25;
-    virat.name = "tribhuwan singh";
-    cout<<"age is "<<virat.age<<endl;
-    cout<<" name  is "<<virat.name<<endl;
-    
+    Teacher t1;
+    t1.name="virat";
+    t1.dept="CS";
+    t1.salary="25000";
+    cout<<t1.name<<endl;
+    cout<<t1.salary<<endl;
+    cout<<t1.dept<<endl;
+     
+ 
     return 0 ;
 }

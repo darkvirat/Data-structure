@@ -4,49 +4,26 @@
 
 #include<iostream>
 using namespace std ;
-class hero {
-    private:
-    int age ;
-     public:
+class Teacher{
+    int salary;
+    public:
     string name ;
+    string dept;
 
-
-    int getage(){
-        return age ;
+    void setsalary(double s ){
+        salary=s;
     }
-    void setage(int a){
-        age = a;
+    double getsalary(){
+        return salary;
     }
-     int getname(){
-        return age ;
-    }
-    void setname(string a){
-        name = a;
-    }
-
-
-
 };
 int main(){
     /*static allocation*/
-    hero a;       
-    a.setage(5);     
-  a.name = "tribhuwan singh";
-    cout<<" name  is "<<a.name<<endl;
-    cout<<"age is "<<a.getage()<<endl; 
-
-    /*dynamic allocation*/
-    hero *b = new hero;
-    b->setage(5);
-    b->setname("'virat'");
-      cout<<" name  is "<< (*b).name<<endl;
-    cout<<"age is "<<(*b).getage()<<endl;
+    Teacher a;       
+     a.setsalary(25000);
+     cout<<a.getsalary();
+   
 
 
-
-     cout<<" name  is "<< b->name<<endl;
-    cout<<"age is "<<b->getage()<<endl;
-
-    
     return 0 ;
 }
