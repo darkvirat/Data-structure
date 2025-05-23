@@ -12,6 +12,5 @@ int pow(int x,int n){
 int main(){
 pow(5,3);
 
-
     return 0;
 }
