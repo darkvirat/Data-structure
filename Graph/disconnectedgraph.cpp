@@ -14,7 +14,6 @@ public:
         this->v = v;
         l = new list<int>[v];
     }
-
     void addEdge(int u, int v) {
         l[u].push_back(v);
         l[v].push_back(u); // Since it's an undirected graph
@@ -36,11 +35,43 @@ void dfs() {
     for (int i = 0; i < v; i++) {
         if (!vis[i]) {
             dfshelp(i, vis);
-            cout << "| "; // Separator for disconnected components
+            cout <<endl; // Separator for disconnected components
         }
     }
     cout << endl;
 }
+
+ void BFShelp(int st,vector<bool>&vis){
+        queue<int>q;
+        q.push(st);
+        vis[st]=true;
+        while(!q.empty()){
+            int u=q.front();
+            q.pop();
+            cout<<u<<" ";
+            list<int>neighbors=l[u];
+            for(int v:neighbors){
+                if(!vis[v]){
+                    vis[v]=true;
+                    q.push(v);
+                }
+            }
+        }
+        // cout<<endl;
+        
+    }
+    void bfs(){
+        vector<bool>vis(v,false);
+        for (int i = 0; i <v; i++)
+        {
+           if(!vis[i]){
+            BFShelp(i,vis);
+            cout<<endl;
+           }
+        }
+        
+    }
+
 
 };
 
@@ -54,6 +85,6 @@ int main(){
     g.addEdge(4, 5);
     g.addEdge(5, 6);
 
-    g.dfs();
+    g.bfs();
     return 0 ;
 }

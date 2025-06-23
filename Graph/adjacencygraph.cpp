@@ -14,7 +14,6 @@ public:
         this->v = v;
         l = new list<int>[v];
     }
-
     void addEdge(int u, int v) {
         l[u].push_back(v);
         l[v].push_back(u); // Since it's an undirected graph
