@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<queue>
 using namespace std ;
 class node{
     public:
@@ -15,24 +16,45 @@ static int i=-1;
 node*bininsert(vector<int>arr){
     i++;
      node*root=new node(arr[i]);
-    if(arr[i]==-1) return root;
+    if(arr[i]==-1) return NULL;
     root->left=bininsert(arr);
     root->right=bininsert(arr);
     
     return root;
 }
-void inorder(node*root){
-    if(root->data==-1) return;
-    inorder(root->left);
-    cout<<root->data<<" ";
-    inorder(root->right);
+void levelordertraversal(node*root){
+  queue<node*>q;
+  q.push(root);
+  q.push(NULL);
+  while(!q.empty()){
+    node*temp=q.front();
+        q.pop();
+    if(temp==NULL){ 
+     if(!q.empty()){
+        cout<<endl;
+        q.push(NULL);
+        continue;
+     }
+     else break;
+    }
+    cout<<temp->data<<" ";
+
+  if(temp->left){
+    q.push(temp->left);
+  }
+  if(temp->right){
+    q.push(temp->right);
+        }
+         
+        
+    }
 }
 
 
 int main(){
     vector<int> arr={2,1,-1,-1,3,-1,5,-1,-1};
     node*root=bininsert(arr);
-    inorder(root);
+    levelordertraversal(root);
 
     return 0 ;
 }
