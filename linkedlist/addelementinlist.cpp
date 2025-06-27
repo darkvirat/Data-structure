@@ -41,7 +41,7 @@ class pre{
     }
 
 
-}
+};
 int main(){
   
     
