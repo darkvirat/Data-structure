@@ -21,7 +21,7 @@ public:
     // Helper function for cycle detection
     bool dfsCycle(int node, vector<bool>& vis, int parent) {
         vis[node] = true;
-
+        list<int>neighour=l[node];
         for (int neighbor : l[node]) {
             if (!vis[neighbor]) {
                 if (dfsCycle(neighbor, vis, node)) {

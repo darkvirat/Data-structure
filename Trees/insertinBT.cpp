@@ -19,7 +19,6 @@ node*bininsert(vector<int>arr){
     if(arr[i]==-1) return NULL;
     root->left=bininsert(arr);
     root->right=bininsert(arr);
-    
     return root;
 }
 void levelordertraversal(node*root){

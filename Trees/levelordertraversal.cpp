@@ -32,7 +32,6 @@ node*buildtree(node*root){
 void levelordertraversal(node*root){
   queue<node*>q;
   q.push(root);
-  
   while(!q.empty()){
   node*curr=q.front();
    q.pop();
